@@ -1,0 +1,137 @@
+
+/*Mobile-first, BEM*/
+:root{
+    --main-bright-orange: hsl(31, 77%, 52%);
+    --main-dark-cyan: hsl(184, 100%, 22%);
+    --main-very-dark-cyan: hsl(179, 100%, 13%);
+    --text-tranparent-white: hsla(0, 0%, 100%, 0.75); /*paragraphs*/
+    --text-very-light-grey: hsl(0, 0%, 95%);/*background, headings, buttons)  */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html,body {
+    height:100%;
+    width:100%
+}
+body{
+    font-size: 15px; /*1rem*/
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.container{
+    padding: 5rem 1.5rem;
+    
+}
+
+
+.card--orange, .btn--orange:hover {
+    background-color: var(--main-bright-orange);
+}
+.btn--orange {
+    color: var(--main-bright-orange);
+}
+.card--cyan, .btn--cyan:hover {
+    background-color: var(--main-dark-cyan);
+}
+.btn--cyan {
+    color: var(--main-dark-cyan);
+}
+.card--dark-cyan, .btn--dark-cyan:hover{
+    background-color: var(--main-very-dark-cyan);
+}
+.btn--dark-cyan{
+    color: var(--main-very-dark-cyan);
+}
+.card__text {
+    color: var(--text-tranparent-white);
+    margin-bottom: 2.5rem;
+    margin-top: 2.5rem;
+    line-height: 1.5rem;
+}
+
+.card__title{
+    color: var(--text-very-light-grey);
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+.container, .btn{
+    background-color: var(--text-very-light-grey);
+}
+
+.btn{
+    border: 1px solid var(--text-very-light-grey);
+    padding: 1rem 1.75rem;
+    border-radius: 1.5rem;
+    font-weight: bolder;
+    font-family : inherit;
+    transition: all .2s ease-in-out;
+}
+
+img {
+    width: 4rem;
+    margin-bottom: 2.5rem;
+}
+
+/*interactive elements*/
+.btn:hover{
+    cursor: pointer;
+    color:var(--text-very-light-grey);
+}
+
+
+
+/*Mobile-specific things*/
+.card--orange{
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.card--dark-cyan{
+    border-radius:  0 0 0.5rem 0.5rem;
+}
+.card {
+    padding: 2.5rem;
+    max-width: 350px;
+    margin: 0 auto;
+    
+}
+
+@media screen and (min-width: 767px) {
+
+
+.card{
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    max-width: none;
+}
+
+.container {
+    width: 80vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    
+    
+}
+.card--orange{
+    border-radius: 0.5rem  0 0 0.5rem;
+}
+
+.card--dark-cyan{
+    border-radius:  0 0.5rem 0.5rem 0;
+}
+
+
+
+}
