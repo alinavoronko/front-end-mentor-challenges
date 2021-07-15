@@ -17,7 +17,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Desktop version](./final_desktop.png)
+![Desktop version](./final_desktop.PNG)
 
 
-![Mobile version](./final_mobile.png)
+![Mobile version](./final_mobile.PNG)
