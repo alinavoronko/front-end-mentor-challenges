@@ -1,0 +1,162 @@
+/* 
+
+
+
+### Body Copy
+
+- Font size (name and stats): 18px
+
+### Font
+
+- Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans)
+- Weights: 400, 700 */
+:root{
+--main-cyan: hsl(185, 75%, 39%);
+--main-dark-blue: hsl(229, 23%, 23%);
+--main-grayish-blue: hsl(227, 10%, 46%);
+--text-dark-gray: hsl(0, 0%, 59%);
+
+}
+
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    font-size: 15px; /*1rem*/
+    font-family: 'Kumbh Sans', sans-serif;
+}
+.wrapper{
+    width: 100%;
+    height: 100%;  
+    position: relative;
+    overflow: hidden;
+}
+.cards{
+// position: relative; //--> now can make circles absolutely positioned
+height: 100%;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 0 1rem;
+background-color:var(--main-cyan);
+}
+
+.TL-circle{
+    background-image: url(./images/bg-pattern-top.svg);
+
+    top: 0;
+    left: 0;
+    transform: rotate(180deg);
+    transform: translateX(-50%);
+    transform: translateY(-50%);
+}
+.BR-circle{
+    background-image: url(./images/bg-pattern-bottom.svg);
+    bottom:0;
+    right: 0;
+   /*Need to figure this out!!*/
+    transform: translateY(50%);
+    transform: translateX(20%);
+
+}
+.TL-circle, .BR-circle {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    height: 50vh;
+    width: 50vw;
+    z-index: 2;
+}
+
+
+
+.card{
+    z-index: 3;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 200px;
+    max-width: 350px;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 1rem 2rem hsla(229, 23%, 23%, 0.3);
+    // border: 1px solid black;
+    overflow: hidden;
+    &__bg-image{
+        background-image: url('./images/bg-pattern-card.svg');
+        flex: 0 0 130px; //height of the image
+    }
+    &__photo{
+    background-image: url(./images/image-victor.jpg);
+    height: 90px;
+    width: 90px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    // // position: relative;
+    // // bottom: 45px;
+
+
+  
+    margin: 0 auto;
+    border-radius: 50%;
+    // transform: translateY(-50%);
+
+    margin-top: -45px; //instead of using relative positioning or translating the element
+    box-sizing: content-box;
+    border: 0.4rem solid white;
+    margin-bottom: 2rem; //since it's not possible to set margin top or padding on card__info
+
+    }
+
+    &__info{
+text-align: center;
+// transform: translateY(-2rem);
+border-bottom: 1px solid  var(--text-dark-gray);
+padding-bottom: 2rem;
+    }
+
+
+    &__personal{
+        // <--> .card__personal .name
+        font-size: 1.2rem;
+.name{
+    font-weight: bold;
+}
+.age{
+    color: var(--text-dark-gray);
+}
+
+    }
+    .city{
+        margin-top: 0.5rem;
+        color: var(--text-dark-gray);
+        font-size: calc(1rem*14/15); //1rem = 15px;
+    }
+
+    &__stats{
+font-size: 1.2rem;
+display: flex; 
+justify-content: space-around;
+padding: 1.65rem;
+
+    }
+&__stat-block{
+    display: flex;
+    flex-direction: column;
+    .count{
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    .category{
+        font-size: 0.65rem;
+        letter-spacing: 1pt;
+        color: var(--text-dark-gray);
+    }
+}
+}

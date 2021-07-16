@@ -1,0 +1,187 @@
+/* 
+
+
+
+### Body Copy
+
+- Font size (name and stats): 18px
+
+### Font
+
+- Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans)
+- Weights: 400, 700 */
+:root {
+  --main-cyan: hsl(185, 75%, 39%);
+  --main-dark-blue: hsl(229, 23%, 23%);
+  --main-grayish-blue: hsl(227, 10%, 46%);
+  --text-dark-gray: hsl(0, 0%, 59%);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  /*1rem*/
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.cards {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1rem;
+  background-color: var(--main-cyan);
+}
+
+.TL-circle {
+  background-image: url(./images/bg-pattern-top.svg);
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.BR-circle {
+  background-image: url(./images/bg-pattern-bottom.svg);
+  bottom: 0;
+  right: 0;
+  /*Need to figure this out!!*/
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  -webkit-transform: translateX(20%);
+          transform: translateX(20%);
+}
+
+.TL-circle, .BR-circle {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  height: 50vh;
+  width: 50vw;
+  z-index: 2;
+}
+
+.card {
+  z-index: 3;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 200px;
+          flex: 1 0 200px;
+  max-width: 350px;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0.5rem 1rem 2rem rgba(45, 50, 72, 0.3);
+          box-shadow: 0.5rem 1rem 2rem rgba(45, 50, 72, 0.3);
+  overflow: hidden;
+}
+
+.card__bg-image {
+  background-image: url("./images/bg-pattern-card.svg");
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 130px;
+          flex: 0 0 130px;
+}
+
+.card__photo {
+  background-image: url(./images/image-victor.jpg);
+  height: 90px;
+  width: 90px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  border-radius: 50%;
+  margin-top: -45px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border: 0.4rem solid white;
+  margin-bottom: 2rem;
+}
+
+.card__info {
+  text-align: center;
+  border-bottom: 1px solid var(--text-dark-gray);
+  padding-bottom: 2rem;
+}
+
+.card__personal {
+  font-size: 1.2rem;
+}
+
+.card__personal .name {
+  font-weight: bold;
+}
+
+.card__personal .age {
+  color: var(--text-dark-gray);
+}
+
+.card .city {
+  margin-top: 0.5rem;
+  color: var(--text-dark-gray);
+  font-size: calc(1rem*14/15);
+}
+
+.card__stats {
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 1.65rem;
+}
+
+.card__stat-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.card__stat-block .count {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card__stat-block .category {
+  font-size: 0.65rem;
+  letter-spacing: 1pt;
+  color: var(--text-dark-gray);
+}
+/*# sourceMappingURL=style.css.map */
