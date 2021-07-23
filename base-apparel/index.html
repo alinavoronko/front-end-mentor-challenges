@@ -34,20 +34,28 @@
         Add your email below to stay up-to-date with announcements and our launch deals.      
       </p>
     
-      <form action="#" class="card__form">
-      <input type="email" placeholder="Email Address" class="inp-email">
+      <form action="#" class="card__form"> 
+      <input type="email" placeholder="Email Address" id="email" class="inp-email" oninput="validate()">
       <input type="image" src="./images/icon-arrow.svg" class="img=submit" alt="Submit">
-      </form>
+      <span class="error" id ="error" aria-live="polite"></span> 
+    </form>
+      <!-- <form action="#" class="card__form">
+      <input type="email" placeholder="Email Address" id="email" class="inp-email">
+      <input type="image" src="./images/icon-arrow.svg" class="img=submit" alt="Submit">
+      </form> -->
     </div>
-
-<!-- <div class="card__hero"></div> -->
-<!-- <img src="./images/hero-mobile.jpg" alt="Hero" class="card__hero"> -->
 
 <picture class="card__hero">
   <source media="(min-width: 1024px)" srcset="./images/hero-desktop.jpg">
   <source media="(max-width: 1023px)" srcset="./images/hero-mobile.jpg">
   <img src="./images/hero-desktop.jpg" alt="Hero picture">
 </picture>
+
+<!-- <picture class="card__hero">
+  <source media="(min-width: 640px)" srcset="./images/hero-desktop.jpg">
+  <source media="(max-width: 639px)" srcset="./images/hero-mobile.jpg">
+  <img src="./images/hero-desktop.jpg" alt="Hero picture">
+</picture> -->
 
 </div>
   <!-- <footer>
@@ -57,4 +65,29 @@
     </p>
   </footer> -->
 </body>
+<script>
+// https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation
+const email = document.getElementById("email");
+const err = document.getElementById("error");
+
+// email.addEventListener("input", ()=>{
+//   if(email.validity.typeMismatch){
+//     email.setCustomValidity("Please, provide a valid email");
+//   }
+//   else {
+//     email.setCustomValidity("");
+//   }
+// })
+function validate(){
+  if (!email.checkValidity()) {
+    
+    error.innerHTML="Please, provide a valid email";
+  }
+  else {
+
+    error.innerHTML="Good!";
+  }
+}
+
+</script>
 </html>

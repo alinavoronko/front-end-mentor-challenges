@@ -66,9 +66,11 @@ html{
         &__hero{
             //   mix-blend-mode: multiply;
            order:1;
-        object-fit: cover;
-            img {
+           img {
+                object-fit: cover;
                 width: 100%;
+                max-height: 40vh;
+                object-position: top;
                 // height: 90%;
             }
         }
@@ -95,7 +97,7 @@ html{
            position: relative;
           
             margin-top: 2rem;
-            input[type=email]{
+            input[type=email], input[type=email]:focus{
                 background-color: transparent;
                 &::placeholder{
                     color: var(--main-desaturated-red);
@@ -129,9 +131,58 @@ background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 
 }
 
+// @media screen and (min-width: 640px){
 @media screen and (min-width: 1024px){
 
+    .card{
     
+        position: relative;
+        flex-direction: row;
+        
+        &__logo{
+
+            position: absolute;
+            top: 0;
+            left:10.25rem;
+        }
+
+        &__hero{
+            order:2;
+            width: 100%;
+            img{
+                height:100%;
+                width: 100%;
+                max-height: none;
+                object-fit: cover;
+                position: center;
+
+            }
+        }
+        &__info{
+            order:1;
+            // padding: 4rem 4rem;
+          padding: 14.125rem 10.25rem;
+          max-width: 57vw;
+          min-width: 53vw;
+          text-align: left;
+          background-image: url(./images/bg-pattern-desktop.svg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          mix-blend-mode: multiply;
+        }
+        &__heading{
+            max-width: 20rem;
+            font-size: 3rem;
+            line-height: 1.25;
+        }
+        &__form{
+            input[type=image]{
+                padding: 0.875rem 2.25rem;
+            }
+        }
+    }
 }
 
-
+// Background property does not correspond to the initial design 
+// TO-DO: choose a different gradient/ mix-blend-mode

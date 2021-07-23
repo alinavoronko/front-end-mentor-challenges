@@ -68,12 +68,15 @@ html {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .card__hero img {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
+  max-height: 40vh;
+  -o-object-position: top;
+     object-position: top;
 }
 
 .card__heading {
@@ -100,7 +103,7 @@ html {
   margin-top: 2rem;
 }
 
-.card__form input[type=email] {
+.card__form input[type=email], .card__form input[type=email]:focus {
   background-color: transparent;
   font-size: 0.875rem;
   display: inline-block;
@@ -111,19 +114,19 @@ html {
   border-radius: 2rem;
 }
 
-.card__form input[type=email]::-webkit-input-placeholder {
+.card__form input[type=email]::-webkit-input-placeholder, .card__form input[type=email]:focus::-webkit-input-placeholder {
   color: var(--main-desaturated-red);
 }
 
-.card__form input[type=email]:-ms-input-placeholder {
+.card__form input[type=email]:-ms-input-placeholder, .card__form input[type=email]:focus:-ms-input-placeholder {
   color: var(--main-desaturated-red);
 }
 
-.card__form input[type=email]::-ms-input-placeholder {
+.card__form input[type=email]::-ms-input-placeholder, .card__form input[type=email]:focus::-ms-input-placeholder {
   color: var(--main-desaturated-red);
 }
 
-.card__form input[type=email]::placeholder {
+.card__form input[type=email]::placeholder, .card__form input[type=email]:focus::placeholder {
   color: var(--main-desaturated-red);
 }
 
@@ -136,5 +139,56 @@ html {
   -webkit-box-shadow: 0 0.5rem 0.5rem 0 rgba(206, 151, 151, 0.3);
           box-shadow: 0 0.5rem 0.5rem 0 rgba(206, 151, 151, 0.3);
   background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+}
+
+@media screen and (min-width: 1024px) {
+  .card {
+    position: relative;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .card__logo {
+    position: absolute;
+    top: 0;
+    left: 10.25rem;
+  }
+  .card__hero {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 100%;
+  }
+  .card__hero img {
+    height: 100%;
+    width: 100%;
+    max-height: none;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: center;
+  }
+  .card__info {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    padding: 14.125rem 10.25rem;
+    max-width: 57vw;
+    min-width: 53vw;
+    text-align: left;
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    mix-blend-mode: multiply;
+  }
+  .card__heading {
+    max-width: 20rem;
+    font-size: 3rem;
+    line-height: 1.25;
+  }
+  .card__form input[type=image] {
+    padding: 0.875rem 2.25rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
