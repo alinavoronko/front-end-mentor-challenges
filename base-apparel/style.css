@@ -11,7 +11,8 @@
   --dark-grayish-red: hsl(0, 6%, 24%);
 }
 
-* {
+*, *::before,
+*::after {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -103,31 +104,35 @@ html {
   margin-top: 2rem;
 }
 
-.card__form input[type=email], .card__form input[type=email]:focus {
+.card__form input[type=email] {
   background-color: transparent;
   font-size: 0.875rem;
   display: inline-block;
-  padding: 1rem;
+  height: 3rem;
   font-family: 'Josefin Sans', sans-serif;
   width: 100%;
   border: 1px solid var(--main-desaturated-red);
   border-radius: 2rem;
 }
 
-.card__form input[type=email]::-webkit-input-placeholder, .card__form input[type=email]:focus::-webkit-input-placeholder {
+.card__form input[type=email]::-webkit-input-placeholder {
   color: var(--main-desaturated-red);
+  padding-left: 1rem;
 }
 
-.card__form input[type=email]:-ms-input-placeholder, .card__form input[type=email]:focus:-ms-input-placeholder {
+.card__form input[type=email]:-ms-input-placeholder {
   color: var(--main-desaturated-red);
+  padding-left: 1rem;
 }
 
-.card__form input[type=email]::-ms-input-placeholder, .card__form input[type=email]:focus::-ms-input-placeholder {
+.card__form input[type=email]::-ms-input-placeholder {
   color: var(--main-desaturated-red);
+  padding-left: 1rem;
 }
 
-.card__form input[type=email]::placeholder, .card__form input[type=email]:focus::placeholder {
+.card__form input[type=email]::placeholder {
   color: var(--main-desaturated-red);
+  padding-left: 1rem;
 }
 
 .card__form input[type=image] {

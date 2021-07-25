@@ -35,7 +35,7 @@
       </p>
     
       <form action="#" class="card__form"> 
-      <input type="email" placeholder="Email Address" id="email" class="inp-email" oninput="validate()">
+      <input type="email" placeholder="Email Address" id="email" pattern="*@*"class="inp-email" required>
       <input type="image" src="./images/icon-arrow.svg" class="img=submit" alt="Submit">
       <span class="error" id ="error" aria-live="polite"></span> 
     </form>
@@ -65,6 +65,8 @@
     </p>
   </footer> -->
 </body>
+
+
 <script>
 // https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation
 const email = document.getElementById("email");
@@ -78,16 +80,19 @@ const err = document.getElementById("error");
 //     email.setCustomValidity("");
 //   }
 // })
-function validate(){
-  if (!email.checkValidity()) {
-    
-    error.innerHTML="Please, provide a valid email";
-  }
-  else {
 
-    error.innerHTML="Good!";
-  }
-}
+
+//v2
+// function validate(){
+//   if (!email.checkValidity()) {
+    
+//     error.innerHTML="Please, provide a valid email";
+//   }
+//   else {
+
+//     error.innerHTML="Good!";
+//   }
+// }
 
 </script>
 </html>

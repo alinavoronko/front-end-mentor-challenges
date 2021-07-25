@@ -11,7 +11,8 @@
     --dark-grayish-red: hsl(0, 6%, 24%);
 }
 
-*{
+*,*::before,
+*::after{
     
     margin: 0;
     padding: 0;
@@ -97,20 +98,27 @@ html{
            position: relative;
           
             margin-top: 2rem;
-            input[type=email], input[type=email]:focus{
+            input[type=email]{
+            
                 background-color: transparent;
                 &::placeholder{
                     color: var(--main-desaturated-red);
-                 
+                 padding-left: 1rem;
                 }
+              
                 font-size: 0.875rem;
                 display: inline-block;
-                padding: 1rem;
+                // padding: 1rem;
+                height: 3rem;
                 font-family: 'Josefin Sans', sans-serif;
                 width: 100%;
                 border: 1px solid var(--main-desaturated-red);
                 border-radius: 2rem;
             }
+            // input[type=email]:focus{
+               
+            // }
+
             input[type=image]{
                 position: absolute;
                 right: 0;
