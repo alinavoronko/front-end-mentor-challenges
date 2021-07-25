@@ -99,11 +99,15 @@ html{
           
             margin-top: 2rem;
             input[type=email]{
-            
+                -webkit-appearance: none;
+                appearance: none;
+              
+            padding-left: 1rem;
                 background-color: transparent;
                 &::placeholder{
                     color: var(--main-desaturated-red);
-                 padding-left: 1rem;
+                   
+                //  padding-left: 1rem;
                 }
               
                 font-size: 0.875rem;
@@ -114,10 +118,36 @@ html{
                 width: 100%;
                 border: 1px solid var(--main-desaturated-red);
                 border-radius: 2rem;
+
+                &:invalid{
+                    border: 2px solid var(--main-soft-red);
+           
+                }
+                
             }
-            // input[type=email]:focus{
-               
-            // }
+          
+ 
+ 
+  /* This is the style of our error messages */
+  .error {
+      
+    width  : 100%;
+    padding: 0;
+   
+
+    text-align: left;
+    font-size: 80%;
+    color: var(--main-soft-red);
+    
+    border-radius: 0 0 5px 5px;
+  }
+  
+  .error.active {
+    padding: 0.3rem;
+  
+  }
+
+           
 
             input[type=image]{
                 position: absolute;
@@ -133,9 +163,15 @@ html{
 // - Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)
 background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
           
+
+// TO-DO: Find an alternative solution
+// Add the exclamation mark + shadow to the submit button
+                &:focus{
+                    opacity: 0.7;
+                }
             }
-        }
-                                   
+          
+        }                          
 
 }
 

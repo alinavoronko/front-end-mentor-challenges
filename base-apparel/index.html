@@ -34,9 +34,9 @@
         Add your email below to stay up-to-date with announcements and our launch deals.      
       </p>
     
-      <form action="#" class="card__form"> 
-      <input type="email" placeholder="Email Address" id="email" pattern="*@*"class="inp-email" required>
-      <input type="image" src="./images/icon-arrow.svg" class="img=submit" alt="Submit">
+      <form action="#" class="card__form" novalidate> 
+      <input type="email" name="email" placeholder="Email Address" id="email" required>
+      <input type="image" src="./images/icon-arrow.svg" alt="Submit">
       <span class="error" id ="error" aria-live="polite"></span> 
     </form>
       <!-- <form action="#" class="card__form">
@@ -68,31 +68,48 @@
 
 
 <script>
+// TO-DO: fix that the input is invalid by default
+
 // https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation
+const form  = document.getElementsByClassName('card__form')[0];
 const email = document.getElementById("email");
-const err = document.getElementById("error");
-
-// email.addEventListener("input", ()=>{
-//   if(email.validity.typeMismatch){
-//     email.setCustomValidity("Please, provide a valid email");
-//   }
-//   else {
-//     email.setCustomValidity("");
-//   }
-// })
+const emailError = document.querySelector('span.error');
 
 
-//v2
-// function validate(){
-//   if (!email.checkValidity()) {
-    
-//     error.innerHTML="Please, provide a valid email";
-//   }
-//   else {
+email.addEventListener('input', function (event) {
 
-//     error.innerHTML="Good!";
-//   }
-// }
+  if (email.validity.valid) {
+    emailError.textContent = ''; // Reset the content of the message
+    emailError.className = 'error'; // Reset the visual state of the message
+  } else {
+    // If there is still an error, show the correct error
+    showError();
+  }
+});
 
+form.addEventListener('submit', function (event) {
+  // if the email field is valid, we let the form submit
+
+  if(!email.validity.valid) {
+    // If it isn't, we display an appropriate error message
+    showError();
+    // Then we prevent the form from being sent by canceling the event
+    event.preventDefault();
+  }
+});
+
+function showError() {
+  if(email.validity.valueMissing) {
+    // If the field is empty,
+    // display the following error message.
+    emailError.textContent = 'You need to enter an e-mail address.';
+  } else if(email.validity.typeMismatch) {
+    // If the field doesn't contain an email address,
+    // display the following error message.
+    emailError.textContent = 'Please, provide a valid e-mail address.';
+  } 
+  // Set the styling appropriately
+  emailError.className = 'error active';
+}
 </script>
 </html>

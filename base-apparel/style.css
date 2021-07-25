@@ -102,9 +102,14 @@ html {
 .card__form {
   position: relative;
   margin-top: 2rem;
+  /* This is the style of our error messages */
 }
 
 .card__form input[type=email] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  padding-left: 1rem;
   background-color: transparent;
   font-size: 0.875rem;
   display: inline-block;
@@ -117,22 +122,35 @@ html {
 
 .card__form input[type=email]::-webkit-input-placeholder {
   color: var(--main-desaturated-red);
-  padding-left: 1rem;
 }
 
 .card__form input[type=email]:-ms-input-placeholder {
   color: var(--main-desaturated-red);
-  padding-left: 1rem;
 }
 
 .card__form input[type=email]::-ms-input-placeholder {
   color: var(--main-desaturated-red);
-  padding-left: 1rem;
 }
 
 .card__form input[type=email]::placeholder {
   color: var(--main-desaturated-red);
-  padding-left: 1rem;
+}
+
+.card__form input[type=email]:invalid {
+  border: 2px solid var(--main-soft-red);
+}
+
+.card__form .error {
+  width: 100%;
+  padding: 0;
+  text-align: left;
+  font-size: 80%;
+  color: var(--main-soft-red);
+  border-radius: 0 0 5px 5px;
+}
+
+.card__form .error.active {
+  padding: 0.3rem;
 }
 
 .card__form input[type=image] {
@@ -144,6 +162,10 @@ html {
   -webkit-box-shadow: 0 0.5rem 0.5rem 0 rgba(206, 151, 151, 0.3);
           box-shadow: 0 0.5rem 0.5rem 0 rgba(206, 151, 151, 0.3);
   background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+}
+
+.card__form input[type=image]:focus {
+  opacity: 0.7;
 }
 
 @media screen and (min-width: 1024px) {
