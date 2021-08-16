@@ -1,0 +1,159 @@
+/*### Primary
+
+- Pale blue: hsl(225, 100%, 94%)
+- Bright blue: hsl(245, 75%, 52%)
+
+### Neutral
+
+- Very pale blue: hsl(225, 100%, 98%)
+- Desaturated blue: hsl(224, 23%, 55%)
+- Dark blue: hsl(223, 47%, 23%)
+
+## Typography
+
+### Body Copy
+
+- Font size (paragraph): 16px
+
+### Font
+
+- Family: [Red Hat Display](https://fonts.google.com/specimen/Red+Hat+Display)
+- Weights: 500, 700, 900*/
+:root {
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+}
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+.container {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--pale-blue);
+}
+
+.card {
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  min-width: 0;
+  max-width: 450px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1.5rem;
+  /* offset-x | offset-y | blur-radius| spread-radius | color */
+  -webkit-box-shadow: 0px 10px 10px -10px var(--desaturated-blue);
+          box-shadow: 0px 10px 10px -10px var(--desaturated-blue);
+  /*"The blur radius (optional) - if set to 0 the shadow will be sharp, the higher the number, the more blurred it will be.
+
+The spread radius (optional) - positive values increase the size of the shadow, negative values decrease the size. Default is 0 (the shadow is same size as blur)."*/
+}
+
+.card__body {
+  padding: 3.125rem;
+  text-align: center;
+}
+
+.card__title {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--dark-blue);
+}
+
+.card__text {
+  color: var(--desaturated-blue);
+}
+
+.card .pricing {
+  border-radius: 1rem;
+  background-color: var(--very-pale-blue);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5rem;
+}
+
+.card .pricing__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card .pricing__plan-type {
+  color: var(--dark-blue);
+  font-weight: 900;
+  font-size: 0.875rem;
+}
+
+.card .pricing__price {
+  color: var(--desaturated-blue);
+}
+
+.card .pricing__link {
+  font-size: 0.875rem;
+}
+
+.card__button {
+  margin: 2rem 0;
+  display: block;
+  width: 100%;
+  padding: 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 900;
+}
+
+.card__button--purple {
+  border-radius: 1rem;
+  border: 2px solid var(--dark-blue);
+  background-color: var(--bright-blue);
+  color: white;
+}
+
+.card__button--purple:hover {
+  background-color: var(--desaturated-blue);
+  mix-blend-mode: multiply;
+  cursor: pointer;
+}
+
+.card__link {
+  font-size: 0.875rem;
+  font-weight: 900;
+}
+/*# sourceMappingURL=style.css.map */

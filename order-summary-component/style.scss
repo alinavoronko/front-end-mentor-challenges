@@ -1,0 +1,169 @@
+/*### Primary
+
+- Pale blue: hsl(225, 100%, 94%)
+- Bright blue: hsl(245, 75%, 52%)
+
+### Neutral
+
+- Very pale blue: hsl(225, 100%, 98%)
+- Desaturated blue: hsl(224, 23%, 55%)
+- Dark blue: hsl(223, 47%, 23%)
+
+## Typography
+
+### Body Copy
+
+- Font size (paragraph): 16px
+
+### Font
+
+- Family: [Red Hat Display](https://fonts.google.com/specimen/Red+Hat+Display)
+- Weights: 500, 700, 900*/
+@mixin bottom-button{
+    font-size: 0.875rem;
+    font-weight: 900;
+}
+:root{
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+}
+
+*, *:before, *:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+html{
+    font-size: 16px;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.container{
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pale-blue);
+   
+}
+
+.card{
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    min-width: 0;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    // flex: 0 1 450px;
+    margin: 1.5rem;
+     /* offset-x | offset-y | blur-radius| spread-radius | color */
+     box-shadow: 0px 10px 10px -10px var(--desaturated-blue);
+     /*"The blur radius (optional) - if set to 0 the shadow will be sharp, the higher the number, the more blurred it will be.
+
+The spread radius (optional) - positive values increase the size of the shadow, negative values decrease the size. Default is 0 (the shadow is same size as blur)."*/
+  &__body{
+      padding: 3.125rem;
+      text-align: center;
+  }
+
+  &__title{
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: var(--dark-blue);
+  }
+  &__text{
+    color: var(--desaturated-blue);
+  }
+  .pricing{
+      border-radius: 1rem;
+      background-color: var(--very-pale-blue);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+        &__body{
+
+            display: flex;
+
+        }
+
+    &__text-content{
+        //TO-DO: center!
+        // height: 100%;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-between;
+        }
+      &__logo{
+       
+      }
+
+      &__plan-type{
+        color: var(--dark-blue);
+        font-weight: 900;
+        font-size: 0.875rem;
+        
+      }
+
+      &__price{
+        color: var(--desaturated-blue);
+      }
+
+      &__link{
+        font-size: 0.875rem;
+       
+      }
+  }
+
+
+  &__button{
+      margin:  2rem 0;
+    display:block;
+    width: 100%;
+    padding: 1.125rem;
+    @include bottom-button;
+    &--purple{
+    border-radius: 1rem;
+    border: 2px solid var(--dark-blue);
+    background-color: var(--bright-blue);
+    color: white;
+    &:hover{
+            background-color:var(--desaturated-blue);
+            mix-blend-mode: multiply;
+            cursor: pointer;
+    }
+    }
+  }
+
+  &__link{
+    @include bottom-button;
+    
+  }
+}
+
+// <div class="container">
+//   <div class="card">
+//    
+//     <div class="pricing">
+//       <!-- <img src="/images/icon-music.svg" class="pricing__logo"></img> -->
+//       <img src="/order-summary-component/images/icon-music.svg" class="pricing__logo"></img>
+//       <div class="pricing__body">
+//         <h3 class="pricing__plan-type">Annual Plan</h3>
+//         <p class="pricing__price">  $59.99/year</p>
+//       </div>
+//       <a href="#" class="pricing__link pricing__link--right">Change</a>
+//     </div>
+//     <button class="card__button card__button--purple">Proceed to Payment</button>
+//     <a href="#"class="card__link card__link--btn">Cancel Order</a>
+//   </div>
+// </div>
